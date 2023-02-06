@@ -1,0 +1,45 @@
+﻿@model Mission5.Models.Home.GradeCalculatorModel
+@{
+    ViewData["title"] = "Grade Calculator";
+}
+
+@using(Html.BeginForm("GradeCalculator", "Home", FormMethod.Post))
+{
+    <h3 id="letterGrade"></h3>
+    <div class="row d-flex justify-content-between">
+        <h2>Grade Calculator</h2>
+    </div>
+    <div class="mb-3">
+        <label for="Assignments" class="form-label">Assignments: </label>
+        @Html.TextBoxFor(x => x.Assignments, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.Assignments)
+    </div>
+    <div class="mb-3">
+        <label for="GroupProject" class="form-label">Group Project</label>
+        @Html.TextBoxFor(x => x.GroupProject, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.GroupProject)
+    </div>
+    <div class="mb-3">
+        <label for="Quizzes" class="form-label">Quizzes: </label>
+        @Html.TextBoxFor(x => x.Quizzes, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.Quizzes)
+    </div>
+    <div class="mb-3">
+        <label for="Midterm" class="form-label">Midterm Exam</label>
+        @Html.TextBoxFor(x => x.Midterm, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.Midterm)
+    </div>
+    <div class="mb-3">
+        <label for="Final" class="form-label">Final Exam: </label>
+        @Html.TextBoxFor(x => x.Final, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.Final)
+    </div>
+    <div class="mb-3">
+        <label for="Intex" class="form-label">Intex: </label>
+        @Html.TextBoxFor(x => x.Intex, new { @type = "number"})
+        @Html.ValidationMessageFor(x => x.Intex)
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary mb-3" id="submitter">Calculate Grade</button>
+    </div>
+}
